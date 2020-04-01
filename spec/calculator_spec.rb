@@ -13,7 +13,7 @@ describe Calculator do
   it 'should be able to return an array of the correct list of years' do
     calculator = Calculator.new(10_000)
     calculator.calculate(2, 100)
-    expect(calculator.years).to eq [2020, 2021, 2022]
+    expect(calculator.years_array).to eq [2020, 2021, 2022]
   end
 
   it 'should be able to return an array of total values each year' do
@@ -25,5 +25,17 @@ describe Calculator do
   it 'should allow the default interest rate to be 1.1' do
     calculator = Calculator.new(0)
     expect(calculator.calculate(2, 100)).to eq 2772
+  end
+
+  it 'should show all info on #show_info' do
+    calculator = Calculator.new
+    expect(calculator.show_info).to include(
+      "Starting cash: " => 0,
+      "Saving pm: " => 0,
+      "Interest rate pa: " => 1.1,
+      "Years: " => 30,
+      "Saving increase pa: " => 0
+    )
+
   end
 end
