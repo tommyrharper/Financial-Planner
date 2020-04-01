@@ -24,22 +24,11 @@ class Calculator
     @saving_pm = saving_pm
   end
 
-  def calculate(years = @years, saving_pm = @saving_pm, interest_rate_pa = @interest_rate_pa)
-    total = @starting_cash
-
-    years.times {
-      @year += 1 
-      total += saving_pm * 12
-      total = total * @interest_rate_pa
-      saving_pm = saving_pm + @saving_increase_pa
-      @totals << total.round
-      @years_array << @year
-    }
-
-    @year = STARTING_YEAR
-    total = total.round
-
+  def calculate(years = @years, saving_pm = @saving_pm)
+    math(years, saving_pm)
   end
+
+  
 
   def show_info
     hash = {
@@ -50,6 +39,24 @@ class Calculator
       "Saving increase pa: " => @saving_increase_pa
     }
   end
+
+  private
+
+  def math(years, saving_pm)
+    total = @starting_cash
+    years.times {
+      @year += 1 
+      total += saving_pm * 12
+      total = total * @interest_rate_pa
+      saving_pm = saving_pm + @saving_increase_pa
+      @totals << total.round
+      @years_array << @year
+    }
+    @year = STARTING_YEAR
+    total = total.round
+  end
+
+
 end
 
 def calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase)
