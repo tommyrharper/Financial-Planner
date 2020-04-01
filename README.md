@@ -57,3 +57,10 @@ Quickly I realised this process could be automated using ruby.
     git remote add origin git@github.com:tommyrharper/Financial-Planner.git
     git push -u origin master
     ```
+
+## Domain Model
+
+Objects | Messages
+--------|--------
+Calculator| calculate
+Graph | create_graph(graph_name)
