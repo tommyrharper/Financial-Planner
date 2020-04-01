@@ -15,4 +15,10 @@ describe Calculator do
     calculator.calculate(100, 1.1, 2)
     expect(calculator.years).to eq [2020, 2021, 2022]
   end
+
+  it 'should be able to return an array of total values each year' do
+    calculator = Calculator.new(10_000)
+    calculator.calculate(100, 1.1, 2)
+    expect(calculator.totals).to eq [10000, 12320, 14872]
+  end
 end
