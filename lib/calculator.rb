@@ -27,7 +27,15 @@ class Calculator
     total = total.round
   end
 
+
+
+
 end
+
+
+
+
+
 
 def calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase)
   i = 2020

@@ -21,4 +21,9 @@ describe Calculator do
     calculator.calculate(100, 1.1, 2)
     expect(calculator.totals).to eq [10000, 12320, 14872]
   end
+
+  it 'should allow the default interest rate to be 1.1' do
+    calculator = Calculator.new(0)
+    expect(calculator.calculate(100, 2)).to eq 2772
+  end
 end

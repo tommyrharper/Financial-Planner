@@ -62,5 +62,5 @@ Quickly I realised this process could be automated using ruby.
 
 Objects | Messages
 --------|--------
-Calculator| calculate
+Calculator| calculate(starting_cash)
 Graph | create_graph(graph_name)
