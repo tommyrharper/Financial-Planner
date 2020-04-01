@@ -1,22 +1,28 @@
 require_relative 'graph'
 
 class Calculator
-  def initialize(starting_cash, year = 2020)
+
+  attr_reader :years
+
+  STARTING_YEAR = 2020
+
+  def initialize(starting_cash)
     @starting_cash = starting_cash
-    @year = year
+    @years = [STARTING_YEAR]
+    @year = STARTING_YEAR
   end
 
   def calculate(saving_pm, interest_rate_pa, years, starting_cash = @starting_cash, saving_increase = 0)
-    i = 2020
     total = starting_cash
     years.times {
-      i += 1 
+      @year += 1 
       total += saving_pm * 12
       total = total*interest_rate_pa
       saving_pm = saving_pm + saving_increase
       #@total << total
-      #@year << i
+      @years << @year
     }
+    @YEAR = STARTING_YEAR
     total = total.round
   end
 
