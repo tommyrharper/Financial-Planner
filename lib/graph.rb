@@ -9,6 +9,7 @@ saving_increase = 0
 @total = [starting_cash]
 @year = []
 
+=begin
 def calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase)
   i = 2020
   total = starting_cash
@@ -24,6 +25,7 @@ def calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase
 end
 
 
+
 calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase)
 
 g = Gruff::Line.new
@@ -31,3 +33,4 @@ g.title = "A Line Graph"
 g.data @year, @total
 
 g.write("./line.png")
+=end
