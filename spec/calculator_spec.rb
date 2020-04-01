@@ -36,6 +36,22 @@ describe Calculator do
       "Years: " => 30,
       "Saving increase pa: " => 0
     )
+  end
 
+  it 'should allow all factors to be updated' do
+    calculator = Calculator.new
+    calculator.starting_cash = 1234
+    calculator.years = 50
+    calculator.interest_rate_pa = 1.2
+    calculator.saving_increase_pa = 100
+    calculator.saving_pm = 200
+
+    expect(calculator.show_info).to include(
+      "Starting cash: " => 1234,
+      "Saving pm: " => 200,
+      "Interest rate pa: " => 1.2,
+      "Years: " => 50,
+      "Saving increase pa: " => 100
+    )
   end
 end

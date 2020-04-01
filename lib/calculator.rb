@@ -49,12 +49,6 @@ class Calculator
       "Years: " => @years,
       "Saving increase pa: " => @saving_increase_pa
     }
-
-    #puts "Starting cash: " + @starting_cash.to_s
-    #puts "Saving pm: " + @saving_pm.to_s
-    #puts "Interest rate pa: " + @interest_rate_pa.to_s
-    #puts "Years: " + @years.to_s
-    #puts "Saving increase pa: " + @saving_increase_pa.to_s
   end
 end
 
@@ -69,3 +63,12 @@ def calculate(saving_pm, interest_rate_pa, years, starting_cash, saving_increase
   }
   total = total.round
 end
+
+
+
+
+    #puts "Starting cash: " + @starting_cash.to_s
+    #puts "Saving pm: " + @saving_pm.to_s
+    #puts "Interest rate pa: " + @interest_rate_pa.to_s
+    #puts "Years: " + @years.to_s
+    #puts "Saving increase pa: " + @saving_increase_pa.to_s
